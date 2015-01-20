@@ -2,7 +2,7 @@
 // @name        Konverter
 // @namespace   konverter.onliner.by
 // @include     http://*.onliner.by*
-// @version     1.0.3
+// @version     1.0.4
 // @author      Norman_by
 // @grant       none
 // ==/UserScript==
@@ -19,7 +19,7 @@ function convertKurs(selector) {
      var summDol = '$ ' + String(Math.round(summByr/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
    
       $(element).text(summDol).attr({"title":summByr});
-      $(element).parent().html( $(element).parent().html().replace("руб.",''));
+     $(element).parent().html( $(element).parent().html().replace("руб.",''));
   
      
   });
@@ -51,15 +51,15 @@ setTimeout(function () {
         convertKurs($('p.big>a>strong')); //авто-мото барахолка
         convertKurs($('td.cost>big>strong')); //барахолка
         convertKursKatalog($('td.pprice')); //каталог
-        convertKurs($('ul.b-ba-topicdet>li.cost>strong')); //барахолка объявление
-		convertKurs($('span.autoba-hd-details-costs>span.cost>strong')); //авто-барахолка объявление
+        convertKurs($('ul.b-ba-topicdet>li.cost')); //барахолка объявление
+		convertKurs($('span.autoba-hd-details-costs>span.cost')); //авто-барахолка объявление
      });
       
        
 		convertKurs($('p.big>a>strong')); //авто-мото барахолка
 		convertKurs($('td.cost>big>strong')); //барахолка
 		convertKursKatalog($('td.pprice')); //каталог
-		convertKurs($('ul.b-ba-topicdet>li.cost>strong')); //барахолка объявление
+		convertKurs($('ul.b-ba-topicdet>li.cost')); //барахолка объявление
 		convertKurs($('span.autoba-hd-details-costs>span.cost>strong')); //авто-барахолка объявление
    
     
