@@ -2,7 +2,7 @@
 // @name        Konverter
 // @namespace   konverter.onliner.by
 // @include     http://*.onliner.by*
-// @version     1.0.4
+// @version     1.0.5
 // @author      Norman_by
 // @grant       none
 // ==/UserScript==
@@ -33,14 +33,19 @@ function convertKursKatalog(selector) {
     if (arrTmp[0].length == 2) {
 			var summByr = parseInt(( arrTmp[0][0] ), 10);  
 			var summByr2 = parseInt(( arrTmp[0][1] ), 10);  
-			var summDol = '$ ' + String(Math.round(summByr/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' - ' + '$ ' + String(Math.round(summByr2/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+ if ($.isNumeric(summByr)) 
+    var summDol = '$ ' + String(Math.round(summByr/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' - ' + '$ ' + String(Math.round(summByr2/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+
 			 
         } else {
       var summByr = parseInt(( arrTmp[0][0] ), 10);  
-      var summDol = '$ ' + String(Math.round(summByr/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
+  if ($.isNumeric(summByr)) 
+     var summDol = '$ ' + String(Math.round(summByr/chislo)).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
         }
 	 
-	     $(element).html(summDol+arrTmp[1]) ;
+     if(!!!summDol) {
+    		if (!!arrTmp[1]) $(element).html(summDol+arrTmp[1]);
+  	} 
      });
 };
 
