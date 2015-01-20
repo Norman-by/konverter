@@ -2,7 +2,7 @@
 // @name        Konverter
 // @namespace   konverter.onliner.by
 // @include     http://*.onliner.by*
-// @version     1.0.2
+// @version     1.0.3
 // @author      Norman_by
 // @grant       none
 // ==/UserScript==
@@ -51,8 +51,8 @@ setTimeout(function () {
         convertKurs($('p.big>a>strong')); //авто-мото барахолка
         convertKurs($('td.cost>big>strong')); //барахолка
         convertKursKatalog($('td.pprice')); //каталог
-        convertKurs($('ul.b-ba-topicdet>li.cost')); //барахолка объявление
-		convertKurs($('span.autoba-hd-details-costs>span.cost')); //авто-барахолка объявление
+        convertKurs($('ul.b-ba-topicdet>li.cost>strong')); //барахолка объявление
+		convertKurs($('span.autoba-hd-details-costs>span.cost>strong')); //авто-барахолка объявление
      });
       
        
