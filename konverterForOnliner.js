@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        Konverter
 // @namespace   konverter.onliner.by
-// @include     http://*.onliner.by*
-// @version     1.0.6
+// @include     *.onliner.by*
+// @version     1.0.7
 // @author      Norman_by
 // @source      https://github.com/Norman-by/konverter
 // @grant       none
@@ -53,7 +53,7 @@ function convertKursKatalog(selector) {
 function krrasota() {
 		convertKurs($('p.big>a>strong')); //авто-мото барахолка
         convertKurs($('td.cost>big>strong')); //барахолка
-        convertKursKatalog($('td.pprice')); //каталог
+        convertKursKatalog($('.pprice')); //каталог
         convertKurs($('ul.b-ba-topicdet>li.cost')); //барахолка объявление
 		convertKurs($('span.autoba-hd-details-costs>span.cost')); //авто-барахолка объявление
   
