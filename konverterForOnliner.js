@@ -2,17 +2,15 @@
 // @name        Konverter
 // @namespace   konverter.onliner.by
 // @include     *.onliner.by*
-// @version     1.0.7
+// @version     1.0.8
 // @author      Norman_by
 // @source      https://github.com/Norman-by/konverter
 // @grant       none
 // ==/UserScript==
 
-var kurs = $('.top-informer-currency>a>span._u').text();
-var expr = /\s/gi; 
-var chislo = parseInt( kurs.replace(expr,'').slice(1), 10);
-
- 
+var kurs;
+var expr;
+var chislo;
 
 function convertKurs(selector) {
 	selector.map(function(indx, element){
@@ -51,11 +49,15 @@ function convertKursKatalog(selector) {
 
 /*-------*/
 function krrasota() {
-		convertKurs($('p.big>a>strong')); //авто-мото барахолка
+	kurs = $('.top-informer-currency>a>span._u').text();
+	expr = /\s/gi; 
+	chislo = parseInt( kurs.replace(expr,'').slice(1), 10);
+	
+	convertKurs($('p.big>a>strong')); //авто-мото барахолка
         convertKurs($('td.cost>big>strong')); //барахолка
         convertKursKatalog($('.pprice')); //каталог
         convertKurs($('ul.b-ba-topicdet>li.cost')); //барахолка объявление
-		convertKurs($('span.autoba-hd-details-costs>span.cost')); //авто-барахолка объявление
+	convertKurs($('span.autoba-hd-details-costs>span.cost')); //авто-барахолка объявление
   
 }
 setTimeout(function () {
