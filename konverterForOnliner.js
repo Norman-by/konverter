@@ -2,7 +2,7 @@
 // @name        Konverter
 // @namespace   konverter.onliner.by
 // @include     *.onliner.by*
-// @version     1.0.8
+// @version     1.0.9
 // @author      Norman_by
 // @source      https://github.com/Norman-by/konverter
 // @grant       none
@@ -55,7 +55,7 @@ function krrasota() {
 	
 	convertKurs($('p.big>a>strong')); //авто-мото барахолка
         convertKurs($('td.cost>big>strong')); //барахолка
-        convertKursKatalog($('.pprice')); //каталог
+        convertKursKatalog($('.pprice>a')); //каталог
         convertKurs($('ul.b-ba-topicdet>li.cost')); //барахолка объявление
 	convertKurs($('span.autoba-hd-details-costs>span.cost')); //авто-барахолка объявление
   
