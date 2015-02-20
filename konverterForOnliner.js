@@ -24,7 +24,7 @@ function convertKursKatalog(selector) {
 	selector.map(function(indx, element){
 		 
 		
-		var arrTmp = $(element).html().match(/([0-9]{1,3}\s)*(\d+\d+\d)|([0-9]{1,3}&nbsp;)*(\d+\d+\d)/gi);
+		var arrTmp = $(element).html().match(/((([0-9]{1,3}&nbsp;){1,}(\d{3}))|(([0-9]{1,3}\s)*(\d{3})))/gi);
 		 
 		if (arrTmp.length == 2)
 		{
