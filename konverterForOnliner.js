@@ -2,7 +2,7 @@
 // @name Konverter
 // @namespace konverter.onliner.by
 // @include *.onliner.by*
-// @version 1.0.10
+// @version 1.0.11
 // @author Norman_by
 // @source https://github.com/Norman-by/konverter
 // @grant none
